@@ -4,6 +4,7 @@ import { Route, Routes, Link } from "react-router-dom";
 import "./index.css";
 
 const Register = React.lazy(() => import("./pages/register"));
+const Signin = React.lazy(() => import("./pages/signin"));
 const ListTask = React.lazy(() => import("./pages/list"));
 
 export default function App() {
@@ -25,7 +26,7 @@ export default function App() {
               <Link to="/register" className="nav-link">
                 Registrarse
               </Link>
-              <Link to="/" className="nav-link">
+              <Link to="/signin" className="nav-link">
                 Iniciar sesion
               </Link>
             </Nav>
@@ -38,6 +39,7 @@ export default function App() {
             <Suspense fallback={<div>Cargando...</div>}>
               <Routes>
                 <Route path="/register" element={<Register />} />
+                <Route path="/signin" element={<Signin />} />
                 <Route path="/tasks" element={<ListTask />} />
               </Routes>
             </Suspense>
