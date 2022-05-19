@@ -7,6 +7,7 @@ export default function Task(params) {
     id = "",
     description = "",
     done = false,
+    createdAt = "",
     edit,
     approve,
     remove,
@@ -16,6 +17,7 @@ export default function Task(params) {
       <Card.Body>
         <Card.Title>Task # {id}</Card.Title>
         <Card.Text>{description}</Card.Text>
+        <Card.Text>Fecha: {createdAt}</Card.Text>
         <Card.Text>Estado: {done ? "Realizada" : "Pendiente"}</Card.Text>
         <div className="d-flex">
           <FaEdit className="icon" onClick={() => edit(id)} />

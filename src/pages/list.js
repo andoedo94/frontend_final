@@ -63,11 +63,12 @@ export default function List() {
     debugger;
     await deleteTask(id);
     let array = [...data];
-    const index = array.findIndex().findIndex((task) => {
+    const index = array.findIndex((task) => {
       return task._id === id;
     });
 
     array.splice(index, 1);
+    setData(array);
   }
 
   useEffect(() => {
@@ -89,6 +90,7 @@ export default function List() {
             key={item._id}
             id={item._id}
             description={item.description}
+            createdAt={item.createdAt}
             done={item.done}
             edit={openDialog}
             approve={completeTask}
