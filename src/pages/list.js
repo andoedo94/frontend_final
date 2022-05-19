@@ -60,7 +60,6 @@ export default function List() {
   }
 
   async function RemoveTask(id) {
-    debugger;
     await deleteTask(id);
     let array = [...data];
     const index = array.findIndex((task) => {

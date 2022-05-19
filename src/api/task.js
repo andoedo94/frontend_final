@@ -12,6 +12,6 @@ export function updateTask(task) {
   return http.put(`/tasks/${task.id}`, task).then((data) => data.data);
 }
 
-export function deleteTask(task) {
-  return http.delete(`/tasks/${task.id}`).then((data) => data.data);
+export function deleteTask(id) {
+  return http.delete(`/tasks/${id}`).then((data) => data.data);
 }
